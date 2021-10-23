@@ -266,13 +266,25 @@ globalkeys = gears.table.join(
 --        {description = "volume 100%", group = "hotkeys"}),
     
     
-    -- Changing wallpapers
+    -- Changing/deleting wallpapers
     awful.key({ modkey },            "w",     function ()
     awful.spawn.with_shell("bash ~/.local/bin/fehwap.sh") end,
+        {description = "Change wallpaper", group = "Screen"}),
+    awful.key({ modkey, "Shift" },            "x",     function ()
+    awful.spawn.with_shell("bash ~/.local/bin/deletewp.sh") end,
+        {description = "Delete wallpaper", group = "Screen"}),
+   awful.key({ modkey },            "w",     function ()
+    awful.spawn.with_shell("bash ~/.local/bin/fehwap.sh") end,
             {description = "Change wallpaper", group = "Screen"}),
+
     awful.key({ modkey },            "p",     function ()
     awful.spawn.with_shell("picom") end,
-            {description = "Change wallpaper", group = "Screen"}),    
+        {description = "Change wallpaper", group = "Screen"}),
+
+    -- Adding dictionary words
+    awful.key({ modkey },           "p",    function()
+            awful.spawn.with_shell("./.local/bin/newword") end,
+        {description = "Add new word to personal file", group = "lang"}),
     
     -- Youtube
     --	ytfzf
