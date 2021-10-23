@@ -120,7 +120,7 @@ YTFZF_CONFIG_FILE=~/.config/ytfzf/conf.sh
 
 # Create the alias.
 alias dmen='dmenu_run -b -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
-fortune quotes
+shuf -n 1 ~/code/www/site/doc/words.txt
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
