@@ -1,0 +1,5 @@
+#!/bin/sh
+
+word=$(echo "" | dmenu -p "Add word: ")
+meaning=$(echo "" | dmenu -p "Add meaning: ")
+echo "$word | $meaning" >> ~/code/www/site/doc/words.txt
