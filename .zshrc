@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias h="history | cut -c 8- | fzf | xclip -r -selection -c"
+alias h="history | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 alias pac="sudo pacman"
 alias s="speedtest"
 alias ..="cd .."
@@ -113,6 +113,7 @@ alias bx="vim ~/drive/Research/bib.bib"
 alias clean="cd && bash cleaning.sh"
 alias cam="mpv /dev/video0 --profile=low-latency --untimed --framedrop=no --opengl-glfinish=yes"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias slp="sudo pacman -Syu --noconfirm && shutdown"
 cd ~/.local/bin/ && ./fm6000 -f ast.txt && cd
 YTFZF_CONFIG_FILE=~/.config/ytfzf/conf.sh
 # Import the colors.
