@@ -321,24 +321,24 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "b",     function ()
     awful.util.spawn("brave") end,
         {description = "run brave", group = "launcher"}),
+    -- Firefox
+    awful.key({ modkey },            "i",     function ()
+    awful.util.spawn("firefox") end,
+        {description = "run firefox", group = "launcher"}),
+
     -- File manager
     awful.key({ modkey },            "f",     function ()
     awful.util.spawn("pcmanfm") end,
         {description = "run file manager", group = "launcher"}),
 
-       -- Discord
+    -- Discord
     awful.key({ modkey },            "d",     function ()
     awful.util.spawn("discord") end,
-            {description = "Run betterdiscord", group = "launcher"}),
+            {description = "Run Discord", group = "launcher"}),
  
-    -- Amarok
-    awful.key({ modkey },            "a",     function () 
-    awful.util.spawn("amarok") end,
-            {description = "amarok", group = "launcher"}),
-    
-    -- ScreenshoR
-    awful.key({ modkey },            "c",     function () 
-    awful.util.spawn("spectacle") end,
+    -- Screenshot
+    awful.key({ modkey },            "c",     function ()
+    awful.spawn.with_shell("~/.local/bin/screen") end,
             {description = "screenshot", group = "launcher"})
 )
 
@@ -510,6 +510,8 @@ awful.rules.rules = {
     { rule = { instance = "telegram-desktop" },
       properties = { tag = "9" } },
     { rule = { instance = "brave" },
+      properties = { tag = "1" } },
+    { rule = { instance = "Firefox" },
       properties = { tag = "1" } },
     { rule = { instance = "discord" },
       properties = { tag = "2" } },
